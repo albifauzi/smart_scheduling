@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <th>Nama Instruktur</th>
+            <th>Jumlah Jam Pelatihan</th>
+            <th>Senin</th>
+            <th>Selasa</th>
+            <th>Rabu</th>
+            <th>Kamis</th>
+            <th>Jumat</th>
+            <th>Sabtu</th>
+        </thead>
+        <tbody>
+            {% for instructor in instructors %}
+            <tr>
+                <td>{{ instructor.name }}</td>
+                <td>{{ instructor.hour }}</td>
+                <td>{% if '1' in instructor.days %}X{% endif %}</td>
+                <td>{% if '2' in instructor.days %}X{% endif %}</td>
+                <td>{% if '3' in instructor.days %}X{% endif %}</td>
+                <td>{% if '4' in instructor.days %}X{% endif %}</td>
+                <td>{% if '5' in instructor.days %}X{% endif %}</td>
+                <td>{% if '6' in instructor.days %}X{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
